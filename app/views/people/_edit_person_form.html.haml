@@ -1,0 +1,19 @@
+= semantic_form_for @person do |f|
+  - if @person.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@person.errors.count, "error")} prohibited this person from being saved:"
+      %ul
+        - @person.errors.full_messages.each do |msg|
+          %li= msg
+  = f.inputs do
+    = f.input :name
+    = f.input :email
+
+    %h3 Talks
+    #talks
+      = f.semantic_fields_for :talks do |talk|
+        = render 'talk_fields', f: talk
+      .links
+        = link_to_add_association 'Add Talk', f, :talks
+    = f.actions do
+      = f.submit 'Save'

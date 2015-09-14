@@ -10,4 +10,7 @@
 #
 
 class Talk < ActiveRecord::Base
+  has_one :location
+  belongs_to :person
+  accepts_nested_attributes_for :location
 end

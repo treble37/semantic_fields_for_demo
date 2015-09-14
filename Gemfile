@@ -53,6 +53,7 @@ gem 'lol_dba', require: false
 gem 'foreman'
 gem 'newrelic_rpm'
 gem 'formtastic'
+gem 'cocoon'
 
 group :development do
   gem 'sextant'

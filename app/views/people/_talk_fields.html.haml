@@ -1,0 +1,7 @@
+.nested-fields
+  = f.inputs do
+    = f.input :title
+    - f.object.build_location unless f.object.location
+    = f.semantic_fields_for :location do |location|
+      = render 'location_fields', f: location
+    = link_to_remove_association "remove talk", f

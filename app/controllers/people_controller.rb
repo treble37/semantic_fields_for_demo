@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :set_person, only: [:show, :edit, :update, :destroy, :edit_person]
 
   # GET /people
   # GET /people.json
@@ -19,6 +19,10 @@ class PeopleController < ApplicationController
 
   # GET /people/1/edit
   def edit
+  end
+
+  def edit_person
+    
   end
 
   # POST /people
@@ -69,6 +73,6 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:name, :email)
+      params.require(:person).permit(:name, :email, talks_attributes: [:id, :person_id, :title, :_destroy, location_attributes: [:id, :talk_id, :city, :state]] )
     end
 end
