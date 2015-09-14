@@ -52,6 +52,8 @@ gem 'pundit'
 gem 'lol_dba', require: false
 gem 'foreman'
 gem 'newrelic_rpm'
+gem 'formtastic'
+
 group :development do
   gem 'sextant'
   gem 'awesome_print', require: false
